@@ -23,9 +23,7 @@ function addNewNote(){
     const deleteBtn = newNoteToAdd.querySelector('.delete');
 
     const main = newNoteToAdd.querySelector('.main');
-    //console.log(main);
     const textArea = newNoteToAdd.querySelector('textarea');
-    //console.log(textArea);
     
     editBtn.addEventListener("click", ()=>{
         main.classList.toggle('hidden');
@@ -35,24 +33,11 @@ function addNewNote(){
     });
 
     deleteBtn.addEventListener("click",(e)=>{
-        //console.log(e.target);
         newNoteToAdd.remove(); 
     });
     textArea.addEventListener("input",()=>{
         main.innerHTML = marked(textArea.value)
     });
-
-    console.log(newNoteToAdd);
+    
     notesContainerEl.appendChild(newNoteToAdd); 
 }
-
-
-    // <div class="notes">
-    //     <div class="tools-bar">
-    //     <button id="edit-btn" class="edit"><i class="fas fa-edit"></i></button>
-    //     <button id="delete-btn" class="delete"><i class="fas fa-trash"></i></button>
-    //     </div>
-    //     <div class="main ">
-    //     </div>
-    //     <textarea class="hidden" name="write-note" id="" cols="30" rows="10"></textarea>
-    // </div>
